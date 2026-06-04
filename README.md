@@ -1,6 +1,6 @@
 <div align="center">
     <p align="center">
-        <a href="">
+        <a href="https://github.com/cybersecurity-dev/awesome-windows-internals">
           <img width="30%" src="https://github.com/cybersecurity-dev/cybersecurity-dev/blob/main/assets/Windows.svg" />
         </a>
     </p>
@@ -44,5 +44,8 @@ You can access the my other awesome lists [here](https://cyberthreatdefence.com/
 
 ### Contributors
 [Thanks goes to these contributors](https://github.com/cybersecurity-dev/awesome-windows-internals-resources/graphs/contributors)!
+
+### Contributors
+[Thanks goes to these contributors](https://github.com/cybersecurity-dev/awesome-reverse-engineering/graphs/contributors)!
 
 [🔼 Back to top](#awesome-windows-internals-resources-)
