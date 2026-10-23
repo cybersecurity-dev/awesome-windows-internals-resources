@@ -119,6 +119,48 @@ flowchart TB
     <img src="https://github.com/cybersecurity-dev/cybersecurity-dev/blob/main/assets/bar.gif">
 </p>
 
+```mermaid
+sequenceDiagram
+    autonumber
+
+    participant Parent as Parent Process
+    participant K32 as Kernel32.dll
+    participant NT as NTDLL
+    participant PM as Process Manager
+    participant MM as Memory Manager
+    participant OM as Object Manager
+    participant CSRSS as CSRSS
+    participant Child as New Process
+
+    Parent->>K32: CreateProcess()
+    K32->>K32: Validate parameters
+    K32->>NT: Native process request
+    NT->>PM: Enter kernel through system call
+
+    PM->>OM: Create process object
+    OM-->>PM: Process object and handle
+
+    PM->>MM: Create address space
+    MM->>MM: Map executable image
+    MM->>MM: Map NTDLL and dependencies
+    MM-->>PM: Initial address space ready
+
+    PM->>OM: Create initial thread object
+    OM-->>PM: Thread object and handle
+
+    PM->>CSRSS: Register process information
+    CSRSS-->>PM: Registration completed
+
+    PM-->>NT: Return process and thread handles
+    NT-->>K32: Native creation completed
+    K32-->>Parent: PROCESS_INFORMATION
+
+    Parent->>Child: Resume initial thread
+    Child->>Child: Initialize loader
+    Child->>Child: Load required DLLs
+    Child->>Child: Execute program entry point
+```
+
 ## 📖 Contents
 - [Books](#books)
 - [Videos](#videos)
